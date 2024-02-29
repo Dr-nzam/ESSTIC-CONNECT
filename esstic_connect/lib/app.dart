@@ -11,8 +11,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
         theme: ThemeData(
-          primaryColor: const Color(0xFF7ED957),
-          primarySwatch: Colors.lightGreen,
+          primaryColor: const Color(0xFF5669FF),
+          primarySwatch: Colors.blue,
         ),
         initialRoute: AppRoute.splash,
         getPages: AppPage.page,
