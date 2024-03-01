@@ -6,4 +6,10 @@ class AppRoute{
   static const etape2 = '/etape2';
   static const etape3 = '/etape3';
   static const etape4 = '/etape4';
+
+  static const core = '/core';
+  static const information = '/information';
+  static const evenement = '/evenement';
+  static const emission = '/emission';
+  static const tournoi = '/tournoi';
 }

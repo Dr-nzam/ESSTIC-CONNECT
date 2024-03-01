@@ -1,5 +1,6 @@
 import 'package:esstic_connect/binding/splash_binding.dart';
 import 'package:esstic_connect/route/app_route.dart';
+import 'package:esstic_connect/screen/core.dart';
 import 'package:esstic_connect/screen/splash/etape1.dart';
 import 'package:esstic_connect/screen/splash/etape2.dart';
 import 'package:esstic_connect/screen/splash/etape3.dart';
@@ -15,5 +16,7 @@ class AppPage {
     GetPage(name: AppRoute.etape2, page: () => Etape2()),
     GetPage(name: AppRoute.etape3, page: () => Etape3()),
     GetPage(name: AppRoute.etape4, page: () => Etape4()),
+
+    GetPage(name: AppRoute.core, page: () => Core()),
   ];
 }

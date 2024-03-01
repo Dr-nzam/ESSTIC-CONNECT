@@ -100,7 +100,7 @@ class Etape4 extends StatelessWidget {
                       colorButton: Color(0xFF5669FF),
                       text: "Suivant",
                       colorText: Colors.white,
-                      onPressed: () => Get.toNamed(AppRoute.etape4),
+                      onPressed: () => Get.offAllNamed(AppRoute.core),
                     ),
                   ],
                 ),
