@@ -6,6 +6,10 @@ import 'package:esstic_connect/screen/splash/etape2.dart';
 import 'package:esstic_connect/screen/splash/etape3.dart';
 import 'package:esstic_connect/screen/splash/etape4.dart';
 import 'package:esstic_connect/screen/splash/splash.dart';
+import 'package:esstic_connect/screen/utilisateur/emission.dart';
+import 'package:esstic_connect/screen/utilisateur/evenement.dart';
+import 'package:esstic_connect/screen/utilisateur/informations.dart';
+import 'package:esstic_connect/screen/utilisateur/tournoi.dart';
 import 'package:get/get.dart';
 
 class AppPage {
@@ -18,5 +22,10 @@ class AppPage {
     GetPage(name: AppRoute.etape4, page: () => Etape4()),
 
     GetPage(name: AppRoute.core, page: () => Core()),
+
+    GetPage(name: AppRoute.information, page: () => Information()),
+    GetPage(name: AppRoute.evenement, page: () => Evenement()),
+    GetPage(name: AppRoute.emission, page: () => Emission()),
+    GetPage(name: AppRoute.tournoi, page: () => Tournoi()),
   ];
 }

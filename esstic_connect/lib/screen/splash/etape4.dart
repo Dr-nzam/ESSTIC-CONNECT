@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class Etape4 extends StatelessWidget {
   const Etape4({super.key});
 
@@ -47,9 +46,10 @@ class Etape4 extends StatelessWidget {
                     Text(
                       "Prêt à mettre vos compétences à l'épreuve et à affronter d'autres joueurs ?",
                       style: GoogleFonts.poppins(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w400,
-                          color: Color(0xFF353333)),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xFF353333),
+                      ),
                     ),
                   ],
                 ),

@@ -1,5 +1,8 @@
-import 'package:esstic_connect/core/appbar_widget.dart';
 import 'package:esstic_connect/core/constante/constant_asset.dart';
+import 'package:esstic_connect/screen/utilisateur/emission.dart';
+import 'package:esstic_connect/screen/utilisateur/evenement.dart';
+import 'package:esstic_connect/screen/utilisateur/informations.dart';
+import 'package:esstic_connect/screen/utilisateur/tournoi.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -24,8 +27,18 @@ class _CoreState extends State<Core> {
   Color unselectCouleur = const Color(0xFFA0A0A0);
   @override
   Widget build(BuildContext context) {
+
+    List page = [
+      Information(),
+      Evenement(), 
+      Emission(), 
+      Tournoi(),
+    ];
     return Scaffold(
-      backgroundColor: Color(0xFFA0A0A0),
+      body: Container(
+        child: page.elementAt(_selectedIndex),
+      ),
+
       bottomNavigationBar: BottomNavigationBar(
         elevation: 5,
         type: BottomNavigationBarType.fixed,
