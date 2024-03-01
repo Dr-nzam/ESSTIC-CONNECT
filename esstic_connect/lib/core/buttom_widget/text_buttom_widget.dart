@@ -19,9 +19,9 @@ class TextButtonWidget extends StatelessWidget {
       onPressed: onPressed,
       child: Text(
         text,
-        style: GoogleFonts.nunitoSans(
-          fontSize: 18,
-          fontWeight: FontWeight.w800,
+        style: GoogleFonts.poppins(
+          fontSize: 16,
+          fontWeight: FontWeight.w600,
           color: colorText,
         ),
       ),

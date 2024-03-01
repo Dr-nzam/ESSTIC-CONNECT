@@ -20,13 +20,18 @@ class ElevateButtonWidget extends StatelessWidget {
     return ElevatedButton(
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all<Color>(colorButton),
+        shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(5),
+          ),
+        ),
       ),
       onPressed: onPressed,
       child: Text(
         text,
-        style: GoogleFonts.nunitoSans(
-          fontSize: 18,
-          fontWeight: FontWeight.w800,
+        style: GoogleFonts.poppins(
+          fontSize: 16,
+          fontWeight: FontWeight.w600,
           color: colorText,
         ),
       ),
