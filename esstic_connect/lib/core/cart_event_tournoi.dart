@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CartEventTournoi extends StatelessWidget {
-  final Icon iconDate;
-  final Icon iconHeure;
-  final Icon iconLieu;
-  final Icon iconAuteur;
+  final Icon? iconDate;
+  final Icon? iconHeure;
+  final Icon? iconLieu;
+  final Icon? iconAuteur;
   final String? date;
   final String? heure;
   final String? lieu;
@@ -14,26 +14,10 @@ class CartEventTournoi extends StatelessWidget {
   final String? titre;
   const CartEventTournoi(
       {super.key,
-      this.iconDate = const Icon(
-        null,
-        color: Color(0xFF5265FF),
-        size: 20,
-      ),
-      this.iconHeure = const Icon(
-        null,
-        color: Color(0xFF5265FF),
-        size: 20,
-      ),
-      this.iconLieu = const Icon(
-        null,
-        color: Color(0xFF5265FF),
-        size: 20,
-      ),
-      this.iconAuteur = const Icon(
-        null,
-        color: Color(0xFF5265FF),
-        size: 20,
-      ),
+      this.iconDate,
+      this.iconHeure,
+      this.iconLieu,
+      this.iconAuteur,
       this.date,
       this.heure,
       this.lieu,
@@ -44,7 +28,7 @@ class CartEventTournoi extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: BorderRadius.circular(5),
+      borderRadius: BorderRadius.circular(10),
       child: Container(
         margin: EdgeInsets.only(bottom: 30),
         padding: EdgeInsets.all(15),
@@ -111,11 +95,10 @@ class CartEventTournoi extends StatelessWidget {
                   Row(
                     children: [
                       CircleAvatar(
-                        radius: 15,
-                        backgroundColor: Color(0xFFeef0ff),
-                        child: iconHeure
-                      ),
-                     const SizedBox(
+                          radius: 15,
+                          backgroundColor: Color(0xFFeef0ff),
+                          child: iconHeure),
+                      const SizedBox(
                         width: 10,
                       ),
                       Text(

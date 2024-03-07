@@ -56,10 +56,11 @@ class _EvenementState extends State<Evenement> {
             ),
 
              CartEventTournoi(
-              iconAuteur: Icon(Icons.person),
-              iconDate: Icon(Icons.calendar_month_outlined),
-              iconHeure: Icon(Icons.watch_later_outlined),
-              iconLieu: Icon(Icons.location_on_rounded),
+              iconAuteur: Icon(Icons.person, color: Color(0XFF5265FF),),
+              iconDate: Icon(Icons.calendar_month_outlined, color: Color(0XFF5265FF),),
+              iconHeure: Icon(Icons.watch_later_outlined, color: Color(0XFF5265FF),),
+              iconLieu: Icon(Icons.location_on_rounded, color: Color(0XFF5265FF),),
+              pathImage: "${Asset.path}event1.png",
               date: "10 décembre 2024",
               heure: "16h00 - 21h00",
               lieu: "36 Guild Street Londres, États-Unis",
