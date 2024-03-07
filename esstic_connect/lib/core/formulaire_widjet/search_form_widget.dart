@@ -44,14 +44,14 @@ class SearchFormWidget extends StatelessWidget {
         hintText: placeholder,
         suffixIcon: Image.asset("${Asset.path}trie.png"),
         prefixIcon : Image.asset("${Asset.path}search.png"),
-        hintStyle: GoogleFonts.nunitoSans(
+        hintStyle: GoogleFonts.poppins(
           fontSize: 14,
           fontWeight: FontWeight.w400,
-          color: const Color(0xFF9A9A9A),
+          color: const Color(0xFF353333),
         ),
         border: const OutlineInputBorder(
           borderSide: BorderSide(
-            color: Color(0xff544F4D),
+            color: Color(0xffA0A0A0),
           ),
           borderRadius: BorderRadius.all(Radius.circular(10)),
         ),
