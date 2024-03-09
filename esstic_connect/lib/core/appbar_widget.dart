@@ -1,10 +1,11 @@
+import 'package:esstic_connect/route/app_route.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
   final Icon? iconAction;
-  void Function()? onTap;
 
   AppBarWidget({this.title, this.iconAction});
 
@@ -15,13 +16,13 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
       automaticallyImplyLeading: false,
       actions: [
         IconButton(
-          onPressed: () => onTap,
+          onPressed: () => Get.toNamed(AppRoute.login),
           icon: Container(
-            width: MediaQuery.of(context).size.width*0.1,
-            height: MediaQuery.of(context).size.height*0.1,
+            width: MediaQuery.of(context).size.width * 0.1,
+            height: MediaQuery.of(context).size.height * 0.1,
             decoration: BoxDecoration(
-              // color: Colors.white
-            ),
+                // color: Colors.white
+                ),
             child: CircleAvatar(
               child: iconAction!,
               backgroundColor: Color(0XFF5669FF),

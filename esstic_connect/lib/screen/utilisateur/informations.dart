@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:esstic_connect/core/appbar_widget.dart';
 import 'package:flutter/widgets.dart';
 // import 'package:flutter/widgets.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 
 class Information extends StatefulWidget {
   const Information({super.key});

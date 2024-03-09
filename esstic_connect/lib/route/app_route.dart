@@ -12,4 +12,6 @@ class AppRoute{
   static const evenement = '/evenement';
   static const emission = '/emission';
   static const tournoi = '/tournoi';
+
+  static const login = '/login';
 }
