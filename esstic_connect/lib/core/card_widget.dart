@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CardWidget extends StatelessWidget {
-  final String? pathImage;
-  final String? titre;
-  final String? sousTitre;
-  final String? nomAuteur;
+  final String pathImage;
+  final String titre;
+  final String sousTitre;
+  final String nomAuteur;
 
   const CardWidget(
       {super.key,
@@ -30,7 +30,7 @@ class CardWidget extends StatelessWidget {
                   0.15, // Ajoutez une hauteur au conteneur
               decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage(pathImage!), fit: BoxFit.fill),
+                    image: NetworkImage(pathImage), fit: BoxFit.fill),
               ),
             ),
           ),
@@ -42,7 +42,7 @@ class CardWidget extends StatelessWidget {
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.65,
                   child: Text(
-                    titre!,
+                    titre,
                     style: GoogleFonts.poppins(
                       fontSize: 14,
                       fontWeight: FontWeight.w400,
@@ -56,7 +56,7 @@ class CardWidget extends StatelessWidget {
                 SizedBox(
                   width: MediaQuery.of(context).size.width * 0.65,
                   child: Text(
-                    sousTitre!,
+                    sousTitre,
                     style: GoogleFonts.poppins(
                       fontSize: 10,
                       fontWeight: FontWeight.w400,
@@ -78,10 +78,13 @@ class CardWidget extends StatelessWidget {
                       ),
                       backgroundColor: Color(0XFFC4C4C4),
                     ),
+                    SizedBox(
+                      width: 5,
+                    ),
                     Text(
-                      nomAuteur!,
+                      nomAuteur,
                       style: GoogleFonts.poppins(
-                        fontSize: 8,
+                        fontSize: 9,
                         fontWeight: FontWeight.w500,
                         color: const Color(0xFFF2583E),
                       ),

@@ -25,10 +25,7 @@ class CardEmissions extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
               child: Container(
                 color: Colors.white,
-                child: Image.asset(
-                  image!,
-                  fit: BoxFit.cover,
-                ),
+                child: Image(image: NetworkImage(image!), fit: BoxFit.cover, width: 107, height: 60, )
               ),
             ),
             SizedBox(

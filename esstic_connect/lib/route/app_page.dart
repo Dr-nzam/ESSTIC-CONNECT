@@ -1,4 +1,8 @@
 import 'package:esstic_connect/binding/splash_binding.dart';
+import 'package:esstic_connect/binding/user_binding/emission_binding.dart';
+import 'package:esstic_connect/binding/user_binding/evenement_binding.dart';
+import 'package:esstic_connect/binding/user_binding/information_binding.dart';
+import 'package:esstic_connect/binding/user_binding/tournoi_binding.dart';
 import 'package:esstic_connect/route/app_route.dart';
 import 'package:esstic_connect/screen/core.dart';
 import 'package:esstic_connect/screen/login/login.dart';
@@ -16,7 +20,8 @@ import 'package:get/get.dart';
 class AppPage {
   static final page = [
     // route accueil
-    GetPage(name: AppRoute.splash, page: () => Splash(), binding: SplashBinding()),
+    GetPage(
+        name: AppRoute.splash, page: () => Splash(), binding: SplashBinding()),
     GetPage(name: AppRoute.etape1, page: () => Etape1()),
     GetPage(name: AppRoute.etape2, page: () => Etape2()),
     GetPage(name: AppRoute.etape3, page: () => Etape3()),
@@ -24,11 +29,22 @@ class AppPage {
 
     GetPage(name: AppRoute.core, page: () => Core()),
 
-    GetPage(name: AppRoute.information, page: () => Information()),
-    GetPage(name: AppRoute.evenement, page: () => Evenement()),
-    GetPage(name: AppRoute.emission, page: () => Emission()),
-    GetPage(name: AppRoute.tournoi, page: () => Tournoi()),
-
+    GetPage(
+        name: AppRoute.information,
+        page: () => Information(),
+        binding: InformatoinBinding()),
+    GetPage(
+        name: AppRoute.evenement,
+        page: () => Evenement(),
+        binding: EvenementBinding()),
+    GetPage(
+        name: AppRoute.emission,
+        page: () => Emission(),
+        binding: EmissionBinding()),
+    GetPage(
+        name: AppRoute.tournoi,
+        page: () => Tournoi(),
+        binding: TournoiBinding()),
 
     GetPage(name: AppRoute.login, page: () => Login()),
   ];

@@ -45,7 +45,7 @@ class CartEventTournoi extends StatelessWidget {
                   height: 150,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage(pathImage!), fit: BoxFit.cover),
+                        image: NetworkImage(pathImage!), fit: BoxFit.cover),
                     color: Colors.blueAccent,
                   ),
                 ),
