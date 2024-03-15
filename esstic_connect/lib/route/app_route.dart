@@ -13,5 +13,11 @@ class AppRoute{
   static const emission = '/emission';
   static const tournoi = '/tournoi';
 
+  static const detailInfo = '/detailInformation';
+  static const detailEvent = '/detailEvenement';
+  static const detailEmission = '/detailEmission';
+  static const detailTournoi = '/detailTournoi';
+
+
   static const login = '/login';
 }

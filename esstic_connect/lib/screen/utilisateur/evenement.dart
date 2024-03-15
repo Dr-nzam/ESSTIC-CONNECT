@@ -4,6 +4,7 @@ import 'package:esstic_connect/core/cart_event_tournoi.dart';
 import 'package:esstic_connect/core/constante/constant_asset.dart';
 import 'package:esstic_connect/core/formulaire_widjet/search_form_widget.dart';
 import 'package:esstic_connect/data/utilisateur_model.dart';
+import 'package:esstic_connect/route/app_route.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,30 +17,29 @@ class Evenement extends StatefulWidget {
 
 class _EvenementState extends State<Evenement> {
   TextEditingController controllersearch = TextEditingController();
-  final EvenementController Controller = EvenementController();
+  final EvenementController controller = EvenementController();
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    Controller.getAllEvenement();
+    controller.getAllEvenement();
   }
 
   @override
   Widget build(BuildContext context) {
     final EvenementModel eventModel = Get.find();
     return Scaffold(
-      backgroundColor: Color(0xFFf8f4f4),
+      backgroundColor: const Color(0xFFf8f4f4),
       appBar: AppBarWidget(
         title: "Évènements",
-        iconAction: Icon(
+        iconAction: const Icon(
           Icons.person,
           color: Colors.white,
         ),
       ),
       body: Obx(
         () => SingleChildScrollView(
-          padding: EdgeInsets.only(left: 15, right: 15),
+          padding: const EdgeInsets.only(left: 15, right: 15),
           child: Column(
             children: [
               const SizedBox(
@@ -52,12 +52,12 @@ class _EvenementState extends State<Evenement> {
                 ),
                 child: SearchFormWidget(
                   controller: controllersearch,
-                  preffixIcon: Icon(
+                  preffixIcon: const Icon(
                     Icons.search_rounded,
                     color: Color(0XFF5669FF),
                   ),
                   placeholder: "Recherche",
-                  suffixIcon: Icon(
+                  suffixIcon: const Icon(
                     Icons.search_rounded,
                     color: Color(0XFF5669FF),
                   ),
@@ -66,7 +66,7 @@ class _EvenementState extends State<Evenement> {
               const SizedBox(
                 height: 20,
               ),
-              Controller.loading.value == true?
+              controller.loading.value == true?
              const CircularProgressIndicator(
                 color: Color(0XFF5669FF),
               ):
@@ -74,19 +74,20 @@ class _EvenementState extends State<Evenement> {
                 children: [
                   for(int i=0; i<eventModel.evenement.length; i++)
                   CartEventTournoi(
-                    iconAuteur: Icon(
+                    onTap: ()=> Get.toNamed(AppRoute.detailEvent),
+                    iconAuteur: const Icon(
                       Icons.person,
                       color: Color(0XFF5265FF),
                     ),
-                    iconDate: Icon(
+                    iconDate: const Icon(
                       Icons.calendar_month_outlined,
                       color: Color(0XFF5265FF),
                     ),
-                    iconHeure: Icon(
+                    iconHeure: const Icon(
                       Icons.watch_later_outlined,
                       color: Color(0XFF5265FF),
                     ),
-                    iconLieu: Icon(
+                    iconLieu: const Icon(
                       Icons.location_on_rounded,
                       color: Color(0XFF5265FF),
                     ),

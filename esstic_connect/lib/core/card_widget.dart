@@ -17,7 +17,7 @@ class CardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Color(0xFFf8f4f4),
+      color: const Color(0xFFf8f4f4),
       elevation: 0,
       child: Row(
         children: [
@@ -35,7 +35,7 @@ class CardWidget extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.only(left: 7),
+            padding: const EdgeInsets.only(left: 7),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -69,16 +69,16 @@ class CardWidget extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    CircleAvatar(
+                    const CircleAvatar(
                       radius: 8,
+                      backgroundColor: Color(0XFFC4C4C4),
                       child: Icon(
                         Icons.person_2_rounded,
                         color: Colors.white,
                         size: 15,
                       ),
-                      backgroundColor: Color(0XFFC4C4C4),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 5,
                     ),
                     Text(
@@ -90,7 +90,7 @@ class CardWidget extends StatelessWidget {
                       ),
                     ),
                   ],
-                )
+                ),
               ],
             ),
           )

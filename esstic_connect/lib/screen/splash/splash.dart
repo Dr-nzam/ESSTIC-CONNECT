@@ -3,6 +3,7 @@ import 'package:esstic_connect/core/constante/constant_asset.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+// ignore: must_be_immutable
 class Splash extends StatelessWidget {
   Splash({super.key});
   SplashController controller = Get.find<SplashController>();

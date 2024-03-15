@@ -3,6 +3,7 @@ import 'package:esstic_connect/core/card_widget.dart';
 import 'package:esstic_connect/core/constante/constant_asset.dart';
 import 'package:esstic_connect/core/formulaire_widjet/search_form_widget.dart';
 import 'package:esstic_connect/data/utilisateur_model.dart';
+import 'package:esstic_connect/route/app_route.dart';
 import 'package:flutter/material.dart';
 import 'package:esstic_connect/core/appbar_widget.dart';
 import 'package:get/get.dart';
@@ -72,12 +73,15 @@ class _InformationState extends State<Information> {
                   : Column(
                       children: [
                         for (int i = 0; i < infomodel.info.length; i++)
-                          CardWidget(
-                            pathImage:
-                                "${Constants.baseUrl}${infomodel.info[i]['image']}",
-                            titre: "${infomodel.info[i]['titre']}",
-                            sousTitre: "${infomodel.info[i]['description']}".substring(0,220),
-                            nomAuteur: "${infomodel.info[i]['user']['email']}",
+                          GestureDetector(
+                            onTap: ()=> Get.toNamed(AppRoute.detailInfo),
+                            child: CardWidget(
+                              pathImage:
+                                  "${Constants.baseUrl}${infomodel.info[i]['image']}",
+                              titre: "${infomodel.info[i]['titre']}",
+                              sousTitre: "${infomodel.info[i]['description']}".substring(0,220),
+                              nomAuteur: "${infomodel.info[i]['user']['email']}",
+                            ),
                           ),
 
                         //

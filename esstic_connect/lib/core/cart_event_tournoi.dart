@@ -12,6 +12,7 @@ class CartEventTournoi extends StatelessWidget {
   final String? nomAuteur;
   final String? pathImage;
   final String? titre;
+  final VoidCallback? onTap;
   const CartEventTournoi(
       {super.key,
       this.iconDate,
@@ -23,157 +24,162 @@ class CartEventTournoi extends StatelessWidget {
       this.lieu,
       this.nomAuteur,
       this.pathImage,
-      this.titre});
+      this.titre,
+      this.onTap
+      });
 
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(10),
-      child: Container(
-        margin: EdgeInsets.only(bottom: 30),
-        padding: EdgeInsets.all(15),
-        color: Colors.white,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Center(
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(5),
-                child: Container(
-                  // color: Colors.red,
-                  width: 250,
-                  height: 150,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: NetworkImage(pathImage!), fit: BoxFit.cover),
-                    color: Colors.blueAccent,
+    return GestureDetector(
+      onTap: onTap,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(10),
+        child: Container(
+          margin: const EdgeInsets.only(bottom: 30),
+          padding: const EdgeInsets.all(15),
+          color: Colors.white,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Center(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(5),
+                  child: Container(
+                    // color: Colors.red,
+                    width: 250,
+                    height: 150,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: NetworkImage(pathImage!), fit: BoxFit.cover),
+                      color: Colors.blueAccent,
+                    ),
                   ),
                 ),
               ),
-            ),
-            const SizedBox(
-              height: 5,
-            ),
-            Center(
-              child: Text(
-                titre!,
-                style: GoogleFonts.poppins(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w400,
-                  color: const Color(0xFF000000),
+              const SizedBox(
+                height: 5,
+              ),
+              Center(
+                child: Text(
+                  titre!,
+                  style: GoogleFonts.poppins(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w400,
+                    color: const Color(0xFF000000),
+                  ),
                 ),
               ),
-            ),
-            Container(
-              padding: const EdgeInsets.only(left: 35.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      CircleAvatar(
-                        radius: 15,
-                        backgroundColor: Color(0xFFeef0ff),
-                        child: iconDate,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        date!,
-                        style: GoogleFonts.poppins(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                          color: const Color(0xFF747688),
-                        ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  Row(
-                    children: [
-                      CircleAvatar(
+              Container(
+                padding: const EdgeInsets.only(left: 35.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        CircleAvatar(
                           radius: 15,
-                          backgroundColor: Color(0xFFeef0ff),
-                          child: iconHeure),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        heure!,
-                        style: GoogleFonts.poppins(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                          color: const Color(0xFF747688),
+                          backgroundColor: const Color(0xFFeef0ff),
+                          child: iconDate,
                         ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  Row(
-                    children: [
-                      CircleAvatar(
-                        radius: 15,
-                        backgroundColor: Color(0xFFeef0ff),
-                        child: iconLieu,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        lieu!,
-                        style: GoogleFonts.poppins(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                          color: const Color(0xFF747688),
+                        const SizedBox(
+                          width: 10,
                         ),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  Row(
-                    children: [
-                      CircleAvatar(
-                        radius: 15,
-                        backgroundColor: Color(0xFFeef0ff),
-                        child: iconAuteur,
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            nomAuteur!,
-                            style: GoogleFonts.poppins(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                              color: const Color(0xFFF2583E),
-                            ),
+                        Text(
+                          date!,
+                          style: GoogleFonts.poppins(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            color: const Color(0xFF747688),
                           ),
-                          Text(
-                            "Organisateur",
-                            style: GoogleFonts.poppins(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                              color: const Color(0xFF747688),
-                            ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Row(
+                      children: [
+                        CircleAvatar(
+                            radius: 15,
+                            backgroundColor: const Color(0xFFeef0ff),
+                            child: iconHeure),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          heure!,
+                          style: GoogleFonts.poppins(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            color: const Color(0xFF747688),
                           ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ],
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Row(
+                      children: [
+                        CircleAvatar(
+                          radius: 15,
+                          backgroundColor: const Color(0xFFeef0ff),
+                          child: iconLieu,
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          lieu!,
+                          style: GoogleFonts.poppins(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            color: const Color(0xFF747688),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Row(
+                      children: [
+                        CircleAvatar(
+                          radius: 15,
+                          backgroundColor: const Color(0xFFeef0ff),
+                          child: iconAuteur,
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              nomAuteur!,
+                              style: GoogleFonts.poppins(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
+                                color: const Color(0xFFF2583E),
+                              ),
+                            ),
+                            Text(
+                              "Organisateur",
+                              style: GoogleFonts.poppins(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w400,
+                                color: const Color(0xFF747688),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
