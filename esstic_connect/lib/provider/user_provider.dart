@@ -6,7 +6,7 @@ class HomeProvider extends GetxController {
 
   Future<Response> listInformation() async {
     final response = await getConnect
-        .get('${Constants.baseUrl}/api/information/getallinformation/');
+        .get('${Constants.baseUrl}/api/information/get-all-information/');
     return response;
   }
 
@@ -25,6 +25,12 @@ class HomeProvider extends GetxController {
   Future<Response> listTournoi() async {
     final response = await getConnect
         .get('${Constants.baseUrl}/api/tournois/tout-tournoi/');
+    return response;
+  }
+
+  Future<Response> detailInformation(int id) async {
+    final response = await getConnect
+        .get('${Constants.baseUrl}/api/information/detail-information/$id/');
     return response;
   }
 }

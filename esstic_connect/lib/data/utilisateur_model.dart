@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 
 class InformationModel  extends GetxService {
   var info = [].obs;
+  var donnees = {}.obs;
 }
 
 class EvenementModel  extends GetxService {

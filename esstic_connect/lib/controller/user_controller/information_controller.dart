@@ -18,5 +18,18 @@ class InformationController extends GetxController{
       loading.value = true;
     }
   }
+
+  Future<void> getDetailInformation(int id) async {
+    loading.value = true;
+     final HomeProvider provider = HomeProvider();
+    var response = await provider.detailInformation(id);
+    if (!response.status.hasError) {
+      infoModel.donnees.value= response.body;  
+      print(response.body);
+      loading.value = false;
+    } else {
+      loading.value = true;
+    }
+  }
 }
 

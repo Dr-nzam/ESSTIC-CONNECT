@@ -1,7 +1,7 @@
 import 'package:esstic_connect/core/constante/constant_asset.dart';
+import 'package:esstic_connect/core/icon_text.dart';
+import 'package:esstic_connect/core/image_detail_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DetailEvenement extends StatefulWidget {
@@ -14,108 +14,77 @@ class DetailEvenement extends StatefulWidget {
 class _DetailEvenementState extends State<DetailEvenement> {
   @override
   Widget build(BuildContext context) {
+    String text =
+        "Le monde de l'informatique est en constante évolution, et il est important de rester à la pointe des dernières tendances.C'est pourquoi nous vous invitons à participer à notre événement sur l'avenir de l'informatique.";
+
     return Scaffold(
-      backgroundColor: Colors.white,
+      // backgroundColor: Colors.white,
       body: ListView(
         children: [
-          Stack(
-            children: [
-              ClipRRect(
-                borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20)),
-                child: SizedBox(
-                  width: double.infinity,
-                  height: MediaQuery.of(context).size.height * 0.35,
-                  child: Image.asset(
-                    "${Asset.path}etape1.jpg",
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(25),
-                child: Row(
-                  children: [
-                    GestureDetector(
-                      onTap: () => Get.back(),
-                      child: const Icon(
-                        Icons.arrow_back,
-                        color: Colors.white,
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 15,
-                    ),
-                    Text(
-                      "Détails de l'évènement",
-                      style: GoogleFonts.poppins(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w400,
-                        color: Colors.white,
-                      ),
-                    )
-                  ],
-                ),
-              )
-            ],
-          ),
+          ImageDetailWidget(
+              image: "${Asset.path}etape1.jpg",
+              titre: "Détails de l'évènement"),
           Padding(
             padding: const EdgeInsets.only(left: 20, top: 10, right: 10),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(
                   height: 10,
                 ),
+                Center(
+                  child: Text(
+                    "InnovateX: L'avenir de l'informatique",
+                    style: GoogleFonts.poppins(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+                const Padding(padding: EdgeInsets.only(top: 20)),
+                const IconText(
+                  icon: Icon(
+                    Icons.calendar_month,
+                    color: Color(0XFF5265FF),
+                  ),
+                  titre: "10 décembre 2023",
+                  sousTitre: "16h00 - 21h00",
+                ),
+                const Padding(padding: EdgeInsets.only(top: 20)),
+                const IconText(
+                  icon: Icon(
+                    Icons.location_on_rounded,
+                    color: Color(0XFF5265FF),
+                  ),
+                  titre: "36 Guild Street Londres, États-Unis ",
+                ),
+                const Padding(padding: EdgeInsets.only(top: 20)),
+                const IconText(
+                  icon: Icon(
+                    Icons.person_outline_sharp,
+                    color: Color(0XFF5265FF),
+                  ),
+                  titre: "Nom de l’organisateur",
+                  sousTitre: "Organisteur",
+                ),
+                const Padding(padding: EdgeInsets.only(top: 20)),
                 Text(
-                  "InnovateX: L'avenir de l'informatique",
+                  "À propos de l'événement",
                   style: GoogleFonts.poppins(
                     fontSize: 17,
                     fontWeight: FontWeight.w400,
-                    color: Colors.black,
+                    color: Color(0XFF5265FF),
                   ),
                 ),
-                Padding(padding: EdgeInsets.only(top: 20)),
-                Row(
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Container(
-                        height: 40,
-                        width: 40,
-                        color: Color(0XFFeef0ff),
-                        child: Icon(
-                          Icons.calendar_month,
-                          color: Color(0XFF5265FF),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(left: 10),
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "10 décembre 2023",
-                          style: GoogleFonts.poppins(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.black,
-                          ),
-                        ),
-                        Text(
-                          "16h00 - 21h00",
-                          style: GoogleFonts.poppins(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            color: Color(0XFF747688),
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
+                const Padding(padding: EdgeInsets.only(top: 10)),
+                Text(
+                  text,
+                  style: GoogleFonts.poppins(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.black,
+                  ),
                 ),
               ],
             ),

@@ -29,20 +29,20 @@ class _InformationState extends State<Information> {
   Widget build(BuildContext context) {
     final InformationModel infomodel = Get.find();
     return Scaffold(
-      backgroundColor: Color(0xFFf8f4f4),
+      backgroundColor: const Color(0xFFf8f4f4),
       appBar: AppBarWidget(
         title: "Informations",
-        iconAction: Icon(
+        iconAction: const Icon(
           Icons.person,
           color: Colors.white,
         ),
       ),
       body: Obx(
         () => SingleChildScrollView(
-          padding: EdgeInsets.only(left: 15, right: 4),
+          padding: const EdgeInsets.only(left: 15, right: 4),
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Container(
@@ -52,12 +52,12 @@ class _InformationState extends State<Information> {
                 ),
                 child: SearchFormWidget(
                   controller: controllersearch,
-                  preffixIcon: Icon(
+                  preffixIcon: const Icon(
                     Icons.search_rounded,
                     color: Color(0XFF5669FF),
                   ),
                   placeholder: "Recherche",
-                  suffixIcon: Icon(
+                  suffixIcon: const Icon(
                     Icons.search_rounded,
                     color: Color(0XFF5669FF),
                   ),
@@ -72,16 +72,17 @@ class _InformationState extends State<Information> {
                     )
                   : Column(
                       children: [
-                        for (int i = 0; i < infomodel.info.length; i++)
-                          GestureDetector(
-                            onTap: ()=> Get.toNamed(AppRoute.detailInfo),
-                            child: CardWidget(
-                              pathImage:
-                                  "${Constants.baseUrl}${infomodel.info[i]['image']}",
-                              titre: "${infomodel.info[i]['titre']}",
-                              sousTitre: "${infomodel.info[i]['description']}".substring(0,220),
-                              nomAuteur: "${infomodel.info[i]['user']['email']}",
-                            ),
+                        for (int i = 0; i<infomodel.info.length; i++)
+                          CardWidget(
+                            onTap: () =>
+                              Get.toNamed(AppRoute.detailInfo, arguments: {"id": infomodel.info[i]['id'] }),
+                            pathImage:
+                                "${Constants.baseUrl}${infomodel.info[i]['image']}",
+                            titre: "${infomodel.info[i]['titre']}",
+                            sousTitre: "${infomodel.info[i]['description']}"
+                                .substring(0, 220),
+                            nomAuteur:
+                                "${infomodel.info[i]['user']['email']}",
                           ),
 
                         //
