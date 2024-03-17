@@ -12,7 +12,9 @@ class InformationController extends GetxController{
      final HomeProvider provider = HomeProvider();
     var response = await provider.listInformation();
     if (!response.status.hasError) {
-      infoModel.info.value= response.body;  
+      infoModel.info.value= response.body; 
+      print("===================");
+      // print(response.body['user']['is_staff']); 
       loading.value = false;
     } else {
       loading.value = true;

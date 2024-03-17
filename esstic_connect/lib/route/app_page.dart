@@ -1,3 +1,4 @@
+import 'package:esstic_connect/binding/authentification_binding/login_binding.dart';
 import 'package:esstic_connect/binding/splash_binding.dart';
 import 'package:esstic_connect/binding/user_binding/emission_binding.dart';
 import 'package:esstic_connect/binding/user_binding/evenement_binding.dart';
@@ -11,6 +12,10 @@ import 'package:esstic_connect/screen/splash/etape2.dart';
 import 'package:esstic_connect/screen/splash/etape3.dart';
 import 'package:esstic_connect/screen/splash/etape4.dart';
 import 'package:esstic_connect/screen/splash/splash.dart';
+import 'package:esstic_connect/screen/utilisateur/ajouter_emission.dart';
+import 'package:esstic_connect/screen/utilisateur/ajouter_evenement.dart';
+import 'package:esstic_connect/screen/utilisateur/ajouter_information.dart';
+import 'package:esstic_connect/screen/utilisateur/ajouter_tournoi.dart';
 import 'package:esstic_connect/screen/utilisateur/detail_emission.dart';
 import 'package:esstic_connect/screen/utilisateur/detail_evenement.dart';
 import 'package:esstic_connect/screen/utilisateur/detail_information.dart';
@@ -50,11 +55,16 @@ class AppPage {
         page: () => Tournoi(),
         binding: TournoiBinding()),
 
-    GetPage(name: AppRoute.login, page: () => Login()),
+    GetPage(name: AppRoute.login, page: () => Login(), binding: LoginBinding()),
 
     GetPage(name: AppRoute.detailInfo, page: () => DetailInformation()),
     GetPage(name: AppRoute.detailEvent, page: () => DetailEvenement()),
     GetPage(name: AppRoute.detailEmission, page: () => DetailEmission()),
     GetPage(name: AppRoute.detailTournoi, page: () => DetailTournoi()),
+
+    GetPage(name: AppRoute.addInfo, page: () => AjouterInformation()),
+    GetPage(name: AppRoute.addEvent, page: () => AjouterEvenement()),
+    GetPage(name: AppRoute.addEmission, page: () => AjouterEmission()),
+    GetPage(name: AppRoute.addTournoi, page: () => AjouterTournoi()),
   ];
 }

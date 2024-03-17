@@ -1,16 +1,28 @@
 import 'package:esstic_connect/core/buttom_widget/elevate_buttom_widget.dart';
 import 'package:esstic_connect/core/constante/constant_asset.dart';
 import 'package:esstic_connect/core/niveau_etape_widget.dart';
+import 'package:esstic_connect/data/secure_stokage.dart';
 import 'package:esstic_connect/route/app_route.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Etape1 extends StatelessWidget {
+class Etape1 extends StatefulWidget {
   const Etape1({super.key});
 
   @override
+  State<Etape1> createState() => _Etape1State();
+}
+
+class _Etape1State extends State<Etape1> {
+
+  final SecureStorage secureStorage = SecureStorage();
+  @override
   Widget build(BuildContext context) {
+  void first()async{
+    await secureStorage.setFirstInstall("false");
+  }
+  first();
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

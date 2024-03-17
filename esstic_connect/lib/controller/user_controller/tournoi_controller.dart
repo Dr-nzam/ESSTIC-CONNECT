@@ -18,4 +18,17 @@ class TournoiController extends GetxController{
       loading.value = true;
     }
   }
+
+  Future<void> getDetailTournoi(int id) async {
+    loading.value = true;
+     final HomeProvider provider = HomeProvider();
+    var response = await provider.detailTournoi(id);
+    if (!response.status.hasError) {
+      tournoiModel.donnees.value= response.body;  
+      print(response.body);
+      loading.value = false;
+    } else {
+      loading.value = true;
+    }
+  }
 }

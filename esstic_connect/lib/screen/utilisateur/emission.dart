@@ -4,6 +4,7 @@ import 'package:esstic_connect/core/card_emissions.dart';
 import 'package:esstic_connect/core/constante/constant_asset.dart';
 import 'package:esstic_connect/core/formulaire_widjet/search_form_widget.dart';
 import 'package:esstic_connect/data/utilisateur_model.dart';
+import 'package:esstic_connect/route/app_route.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -75,12 +76,18 @@ class _EmissionState extends State<Emission> {
                           for (int i = 0;
                               i < emissionModel.emission.length;
                               i++)
-                            CardEmissions(
-                                image:
-                                    "${Constants.baseUrl}${emissionModel.emission[i]['image']}",
-                                titre: "${emissionModel.emission[i]['nom']}",
-                                nomAuteur:
-                                    "${emissionModel.emission[i]['user']['email']}"),
+                            GestureDetector(
+                              onTap: () => Get.toNamed(AppRoute.detailEmission,
+                                  arguments: {
+                                    "id": emissionModel.emission[i]['id']
+                                  }),
+                              child: CardEmissions(
+                                  image:
+                                      "${Constants.baseUrl}${emissionModel.emission[i]['image']}",
+                                  titre: "${emissionModel.emission[i]['nom']}",
+                                  nomAuteur:
+                                      "${emissionModel.emission[i]['user']['email']}"),
+                            ),
                         ],
                       ),
               ],

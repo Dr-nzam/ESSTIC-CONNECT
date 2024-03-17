@@ -3,6 +3,7 @@ import 'package:esstic_connect/core/appbar_widget.dart';
 import 'package:esstic_connect/core/cart_event_tournoi.dart';
 import 'package:esstic_connect/core/constante/constant_asset.dart';
 import 'package:esstic_connect/core/formulaire_widjet/search_form_widget.dart';
+import 'package:esstic_connect/data/authentification_model.dart';
 import 'package:esstic_connect/data/utilisateur_model.dart';
 import 'package:esstic_connect/route/app_route.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,7 @@ class Evenement extends StatefulWidget {
 class _EvenementState extends State<Evenement> {
   TextEditingController controllersearch = TextEditingController();
   final EvenementController controller = EvenementController();
+  final UserModel user = Get.find();
 
   @override
   void initState() {
@@ -27,6 +29,12 @@ class _EvenementState extends State<Evenement> {
 
   @override
   Widget build(BuildContext context) {
+    if (user.donnees.isEmpty) {
+      print("rien");
+    } else {
+      print("****************************");
+      print(user.donnees);
+    }
     final EvenementModel eventModel = Get.find();
     return Scaffold(
       backgroundColor: const Color(0xFFf8f4f4),
@@ -74,7 +82,7 @@ class _EvenementState extends State<Evenement> {
                 children: [
                   for(int i=0; i<eventModel.evenement.length; i++)
                   CartEventTournoi(
-                    onTap: ()=> Get.toNamed(AppRoute.detailEvent),
+                    onTap: ()=> Get.toNamed(AppRoute.detailEvent, arguments: {"id":eventModel.evenement[i]['id']}),
                     iconAuteur: const Icon(
                       Icons.person,
                       color: Color(0XFF5265FF),

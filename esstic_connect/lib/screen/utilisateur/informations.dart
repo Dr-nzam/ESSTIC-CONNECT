@@ -2,6 +2,7 @@ import 'package:esstic_connect/controller/user_controller/information_controller
 import 'package:esstic_connect/core/card_widget.dart';
 import 'package:esstic_connect/core/constante/constant_asset.dart';
 import 'package:esstic_connect/core/formulaire_widjet/search_form_widget.dart';
+import 'package:esstic_connect/data/authentification_model.dart';
 import 'package:esstic_connect/data/utilisateur_model.dart';
 import 'package:esstic_connect/route/app_route.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,7 @@ class Information extends StatefulWidget {
 class _InformationState extends State<Information> {
   TextEditingController controllersearch = TextEditingController();
   final InformationController controller = InformationController();
+  final UserModel user = Get.find();
 
   @override
   void initState() {
@@ -72,26 +74,36 @@ class _InformationState extends State<Information> {
                     )
                   : Column(
                       children: [
-                        for (int i = 0; i<infomodel.info.length; i++)
+                        for (int i = 0; i < infomodel.info.length; i++)
                           CardWidget(
-                            onTap: () =>
-                              Get.toNamed(AppRoute.detailInfo, arguments: {"id": infomodel.info[i]['id'] }),
+                            onTap: () => Get.toNamed(AppRoute.detailInfo,
+                                arguments: {"id": infomodel.info[i]['id']}),
                             pathImage:
                                 "${Constants.baseUrl}${infomodel.info[i]['image']}",
                             titre: "${infomodel.info[i]['titre']}",
-                            sousTitre: "${infomodel.info[i]['description']}"
-                                .substring(0, 220),
-                            nomAuteur:
-                                "${infomodel.info[i]['user']['email']}",
+                            sousTitre:
+                                "${infomodel.info[i]['description'].length > 220 ? infomodel.info[i]['description'].substring(0, 220) : infomodel.info[i]['description']}",
+                            nomAuteur: "${infomodel.info[i]['user']['email']}",
                           ),
-
-                        //
                       ],
                     ),
             ],
           ),
         ),
       ),
+      floatingActionButton: user.donnees.isEmpty
+          ? null
+          : FloatingActionButton(
+              mini: true,
+              onPressed: () {
+                Get.toNamed(AppRoute.addInfo);
+              },
+              backgroundColor: const Color(0XFF5669FF),
+              child: Icon(
+                Icons.add,
+                color: Colors.white,
+              ),
+            ),
     );
   }
 }

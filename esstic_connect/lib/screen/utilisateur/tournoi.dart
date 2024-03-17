@@ -74,7 +74,9 @@ class _TournoiState extends State<Tournoi> {
                       children: [
                         for (int i = 0; i < tournoimodel.tournoi.length; i++)
                           GestureDetector(
-                            onTap: () => Get.toNamed(AppRoute.detailTournoi),
+                            onTap: () => Get.toNamed(AppRoute.detailTournoi, arguments: {
+                              "id":tournoimodel.tournoi[i]['id']
+                            }),
                             child: CartEventTournoi(
                               iconAuteur: const Icon(
                                 Icons.person,

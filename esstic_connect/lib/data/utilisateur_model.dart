@@ -7,12 +7,15 @@ class InformationModel  extends GetxService {
 
 class EvenementModel  extends GetxService {
   var evenement = [].obs;
+  var donnees = {}.obs;
 }
 
 class EmissionModel  extends GetxService {
   var emission = [].obs;
+  var donnees = {}.obs;
 }
 
 class TournoiModel  extends GetxService {
   var tournoi = [].obs;
+  var donnees = {}.obs;
 }

@@ -11,8 +11,8 @@ class HomeProvider extends GetxController {
   }
 
   Future<Response> listEvenement() async {
-    final response = await getConnect
-        .get('${Constants.baseUrl}/api/evenement/all-event/');
+    final response =
+        await getConnect.get('${Constants.baseUrl}/api/evenement/all-event/');
     return response;
   }
 
@@ -23,14 +23,32 @@ class HomeProvider extends GetxController {
   }
 
   Future<Response> listTournoi() async {
-    final response = await getConnect
-        .get('${Constants.baseUrl}/api/tournois/tout-tournoi/');
+    final response =
+        await getConnect.get('${Constants.baseUrl}/api/tournois/tout-tournoi/');
     return response;
   }
 
   Future<Response> detailInformation(int id) async {
     final response = await getConnect
         .get('${Constants.baseUrl}/api/information/detail-information/$id/');
+    return response;
+  }
+
+  Future<Response> detailEvent(int id) async {
+    final response = await getConnect
+        .get('${Constants.baseUrl}/api/evenement/detail-event/$id/');
+    return response;
+  }
+
+  Future<Response> detailEmission(int id) async {
+    final response = await getConnect
+        .get('${Constants.baseUrl}/api/emission/detail-emission/$id/');
+    return response;
+  }
+
+  Future<Response> detailTournoi(int id) async {
+    final response = await getConnect
+        .get('${Constants.baseUrl}/api/tournois/detail-tournoi/$id/');
     return response;
   }
 }
